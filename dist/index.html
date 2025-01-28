@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="/app.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-dark d-none" id="appNav">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Products</a>
+            <button class="btn btn-secondary d-flex" id="logout">Logout</button>
+        </div>
+    </nav>
+    <div class="container">
+      <div id="appPage" class="d-none">
+          <div class="row mt-5 justify-content-end">
+            <div class="col-md-3">
+                <button class="btn btn btn-primary" data-bs-toggle="modal" data-bs-target="#productModal" id="addBtn">Add</button>
+            </div>
+          </div>
+          <div class="row mt-3 justify-content-md-center">
+            <div class="col-md-9">
+                <table class="table table-striped table-hover" id="productsTable">
+                    <thead>
+                        <th scope="col">#</th>
+                        <th scope="col">ID</th>
+                        <th scope="col">Product Name</th>
+                        <th scope="col">Product Quantity</th>
+                        <th scope="col">Product Price</th>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </div>
+          </div>
+      </div>
+      <div id="loginPage">
+        <div class="row justify-content-md-center">
+          <div class="col-md-6">
+              <div class="m-5 p-5 bg-light border border-secondary border-1 rounded-3">
+                  <div class="mb-3">
+                      <label for="email" class="form-label">Email</label>
+                      <input type="email" class="form-control" id="email" placeholder="Email">
+                  </div>
+                  <div class="mb-3">
+                      <label for="password" class="form-label">Password</label>
+                      <input type="password" class="form-control" id="password" placeholder="Password">
+                  </div>
+                  <div class="row">
+                    <div class="col-md-3 mt-4">
+                      <button type="button" class="btn btn-primary d-flex align-items-center shadow-sm border" id="login">Login</button>
+                    </div>
+                    <div class="col-md-9 mt-4 justify-content-end">
+                      <button class="btn btn-light d-flex align-items-center shadow-sm border rounded" id="signInWithGoogle">
+                        <img src="https://img.icons8.com/color/48/000000/google-logo.png" alt="Google Logo" class="me-2" width="24" height="24">
+                        <span class="">Login with Google</span>
+                      </button>
+                    </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="addModalTitle" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="addModalTitle">Add Product</h5>
+              <h5 class="modal-title d-none" id="editModalTitle">Add Product</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" id="close" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="mb-3">
+                    <label for="productId" class="col-form-label">Product ID:</label>
+                    <input type="text" class="form-control" id="productId">
+                  </div>
+                <div class="mb-3">
+                  <label for="productName" class="col-form-label">Product Name:</label>
+                  <input type="text" class="form-control" id="productName">
+                </div>
+                <div class="mb-3">
+                  <label for="productQuantity" class="col-form-label">Product Quantity:</label>
+                  <input type="text" class="form-control" id="productQuantity">
+                </div>
+                <div class="mb-3">
+                  <label for="productPrice" class="col-form-label">Product Price:</label>
+                  <input type="text" class="form-control" id="productPrice">
+                </div>
+                <input type="hidden" id="productDocId">
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" id="add" data-bs-dismiss="modal">Add</button>
+              <button type="button" class="btn btn-success d-none" id="edit" data-bs-dismiss="modal">Update</button>
+              <button type="button" class="btn btn-danger d-none" id="delete" data-bs-dismiss="modal">Delete</button>
+              <button type="button" class="btn btn-secondary" id="cancel" data-bs-dismiss="modal">Cancel</button>
+            </div>
+          </div>
+        </div>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</html>
